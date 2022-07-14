@@ -1,0 +1,12 @@
+iml=imread('puppy151.png');
+impakal=imread('impakalpuppyfiltered3.png');
+imbyn=rgb2gray(iml);
+imbynfiltered=imsmooth(imbyn,'Gaussian',8);
+imshow(imbyn);
+%bw=im2bw(imbyn,"moments");
+bw=im2bw(imbynfiltered,.4);
+%bw=im2bw(imbyn,graythresh(imbynfiltered,"moments"));
+bw=not(bw);
+inew=impakal.*repmat(bw,[1,1,3]);
+imshow(inew);
+figure, imshow(imbynfiltered);

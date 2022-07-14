@@ -1,0 +1,13 @@
+iml=imread('tsukubal.png');
+imr=imread('tsukubar.png');
+imcl=codifica(iml,3,20);
+imcr=codifica(imr,3,20);
+imwrite(imcl,'imcl.png');
+imwrite(imcr,'imcl.png');
+imbl=getbits(imcl,3);
+imbr=getbits(imcr,3);
+imwrite(imbl,'imbl.png');
+imwrite(imbr,'imbr.png');
+imshow(uint8(imbl));
+imdisparity=sadreduced(iml,imr,16);
+imshow(uint8(imdisparity))
