@@ -1,0 +1,3 @@
+iml=imread('tsukubal.png')
+ws=5
+[impl,imnl,imcl]=pakaltransform(iml,ws);

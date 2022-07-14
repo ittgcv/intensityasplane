@@ -1,0 +1,12 @@
+iml=imread('video3_021.jpg');
+imbyn=rgb2gray(iml);
+%imbynfiltered=imsmooth(imbyn,'Gaussian',4);
+%imbyn=imresize(imbyn,.25);
+ws=7;
+[impl,imnl,imcl]=pakaltransform(imbyn,ws);
+subplot(2,1,1);
+imshow(imbyn);
+subplot(2,1,2);
+imshow(imcl);
+nfile=strcat('impakallandingr',int2str(ws),'.png');
+imwrite(imcl,nfile);
